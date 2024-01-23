@@ -1,0 +1,76 @@
+@import 'vars';
+
+.overlay-login {
+    display: none;
+}
+
+.login-window {
+    position: absolute;
+    padding: 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.login-form {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.login-input {
+    border-style: solid;
+    border-color: black;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn {
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: $media-width) {
+    .login-window {
+        top: $navbar-height;
+        right: 0;
+    }
+
+    .login-form {
+        grid-template-rows: repeat(3, 3.5rem);
+        gap: 1.5rem;
+    }
+
+    .login-btn {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: $media-width) {
+    .login-window {
+        top: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .login-form {
+        grid-template-rows: repeat(3, 4rem);
+        gap: 2rem;
+    }
+
+    .login-btn {
+        font-size: 3rem;
+    }
+
+    .overlay-login {
+        position: fixed;
+        background-color: rgba(0,0,0,0.5);
+        top: $navbar-height;
+        left: 0;
+        width: 100%;
+        height: calc(100% - $navbar-height);
+        z-index: 99;
+    }
+}

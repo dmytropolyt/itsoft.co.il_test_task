@@ -1,0 +1,11 @@
+@import 'login', 'usermenu';
+
+.user-controls {
+    margin-right: 2rem;
+    display: flex;
+}
+
+.user-img {
+    font-size: 3rem;
+    cursor: pointer;
+}

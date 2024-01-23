@@ -12,6 +12,10 @@ class OrderViewSet(ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(user=self.request.user)
+
     def perform_create(self, serializer):
         new_order = serializer.save(user=self.request.user, status=False)
 

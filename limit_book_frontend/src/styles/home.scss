@@ -1,0 +1,23 @@
+@import 'vars';
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: calc(90vh - $navbar-height);
+}
+
+.home-title {
+    text-align: center;
+    background-color: black;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: $media-width) {
+    .home-title {
+        font-size: 7rem;
+    }
+}
