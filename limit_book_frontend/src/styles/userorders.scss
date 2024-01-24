@@ -1,55 +1,7 @@
-.user-orders-title {
-    background-color: black;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
-}
-
-.user-order {
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
-}
-
 .order-complete {
     background-color: #008000;
 }
 
 .order-processing {
     background-color: #DC143C;
-}
-
-@media screen and (min-width: $media-width) {
-    .user-orders-container {
-        padding: 4rem;
-    }
-
-    .user-orders-title {
-        font-size: 3rem;
-    }
-
-    .user-order {
-        display: flex;
-        gap: 2rem;
-    }
-}
-
-@media screen and (max-width: $media-width) {
-    .user-orders-container {
-        padding-top: 4rem;
-    }
-
-    .user-orders-title {
-        font-size: 2rem;
-    }
-
-    .user-order {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 6rem);
-    }
-
-    .order-created-at {
-        grid-column: span 2;
-    }
 }

@@ -3,8 +3,8 @@ import { redirect } from 'react-router-dom';
 
 export { axiosInstance };
 
-const baseUrl = 'http://127.0.0.1:8000/api/v1/';
-
+const baseUrl = import.meta.env.VITE_REACT_APP_API_URL;
+console.log(baseUrl);
 const axiosInstance = axios.create({
     baseURL: baseUrl,
     timeout: 5000,

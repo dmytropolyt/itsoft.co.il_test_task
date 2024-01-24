@@ -21,9 +21,9 @@ function UserMenu({ isOpen }) {
             <div className='user-menu'>
                 <div className="user-menu-links">
                     
-                    <a href='#'>Place Order</a>
+                    <a href='/place-order'>Place Order</a>
                     <a href='/my-orders'>My Orders</a>
-                    <a href='#'>My Transactions</a>
+                    <a href='/my-transactions'>My Transactions</a>
                 
                 </div>
                 <hr className="line-menu" />

@@ -3,8 +3,8 @@ from django.db.models import Q
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import generics
 
-from .models import Order, Transaction
-from .serializers import OrderSerializer, TransactionSerializer
+from .models import Order, Transaction, Stock
+from .serializers import OrderSerializer, TransactionSerializer, StockSerializer
 from .tasks import match_orders
 
 
@@ -33,3 +33,9 @@ class TransactionListAPIView(generics.ListAPIView):
         )
 
         return user_transactions
+    
+
+class StockListAPIView(generics.ListAPIView):
+    serializer_class = StockSerializer
+    queryset = Stock.objects.all()
+    

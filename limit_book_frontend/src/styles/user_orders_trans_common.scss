@@ -1,0 +1,53 @@
+.order-transac-title {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.order-transac {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction {
+    border: 2px black solid;
+}
+
+@media screen and (min-width: $media-width) {
+    .order-transac-container {
+        padding: 4rem;
+    }
+
+    .order-transac-title {
+        font-size: 3rem;
+    }
+
+    .order-transac {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: $media-width) {
+    .order-transac-container {
+        padding-top: 4rem;
+    }
+
+    .order-transac-title {
+        font-size: 3rem;
+    }
+
+    .order-transac {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 6rem 6rem 3rem;
+    }
+
+    .order-transac-created-at {
+        grid-column: span 2;
+    }
+}

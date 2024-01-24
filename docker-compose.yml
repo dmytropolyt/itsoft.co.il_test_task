@@ -10,10 +10,35 @@ services:
              python manage.py migrate"
     volumes:
       - ./limit_book:/limit_book
+      - static_volume:/limit_book/staticfiles
     env_file:
       - ./.env
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./limit_book_frontend
+      dockerfile: Dockerfile
+    command: >
+      sh -c "npm run dev"
+    ports:
+      - '8080:8080'
+    env_file:
+      - ./limit_book_frontend/.env
+    depends_on:
+      - web
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=myblog
+      - POSTGRES_PASSWORD=my_blog
+      - POSTGRES_DB=myblog_db
 
   rabbitmq:
     image: rabbitmq:3.12-management
@@ -35,3 +60,6 @@ services:
     depends_on:
       - rabbitmq
       - web
+
+volumes:
+  postgres_data:

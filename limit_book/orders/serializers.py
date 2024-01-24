@@ -3,6 +3,12 @@ from rest_framework import serializers
 from .models import Order, Stock, Transaction
 
 
+class StockSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Stock
+        fields = ['name']
+
+
 class OrderSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField()
     stock = serializers.SlugRelatedField(

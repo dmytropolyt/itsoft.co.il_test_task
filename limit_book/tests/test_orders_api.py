@@ -32,8 +32,8 @@ class TestOrdersAPI:
         for key in request_data:
             assert request_data[key] == response.json()[key]
 
-    def test_list_orders(self, api_client_auth, order_factory):
-        orders = order_factory.create_batch(5)
+    def test_list_orders(self, api_client_auth, order_factory, user_auth):
+        orders = order_factory.create_batch(5, user=user_auth)
         url = reverse('order-list')
 
         response = api_client_auth.get(url)

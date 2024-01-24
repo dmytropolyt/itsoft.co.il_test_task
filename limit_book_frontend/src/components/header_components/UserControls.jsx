@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Login } from "./Login";
 import { UserMenu } from "./UserMenu";
 
@@ -6,6 +6,13 @@ export { UserControls };
 
 function UserControls({ isAuth }) {
     const [isOpen, setIsOpen] = useState(null);
+    
+    useEffect(() => {
+        
+        const isOpenFromUrl =  window.location.pathname.includes('login');
+
+        setIsOpen(isOpenFromUrl);
+    }, [])
 
     const handleOpen = () => {
         setIsOpen(!isOpen);
